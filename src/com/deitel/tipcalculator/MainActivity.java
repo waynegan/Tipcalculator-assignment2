@@ -32,7 +32,7 @@ public class MainActivity extends Activity
    private TextView totalCustomTextView; // shows total with custom tip
    private TextView eachbill;
    private TextView personnum;
-   private CheckBox tiptax;
+   private boolean tiptax;
    // called when the activity is first created
    @Override
    protected void onCreate(Bundle savedInstanceState)
@@ -91,7 +91,7 @@ public class MainActivity extends Activity
       double customTip = billAmount * customPercent;
       double customTotal = billAmount + customTip;
       
-      double customTip = billAmount ;
+  
       // display custom tip and total formatted as currency
       tipCustomTextView.setText(currencyFormat.format(customTip));
       totalCustomTextView.setText(currencyFormat.format(customTotal));
@@ -103,6 +103,22 @@ public class MainActivity extends Activity
 
 public void setPersonnum(TextView personnum) {
 	this.personnum = personnum;
+}
+
+public boolean isTiptax() {
+	return tiptax;
+}
+
+public void setTiptax(boolean tiptax) {
+	this.tiptax = tiptax;
+}
+
+public TextView getEachbill() {
+	return eachbill;
+}
+
+public void setEachbill(TextView eachbill) {
+	this.eachbill = eachbill;
 }
 
 // called when the user changes the position of SeekBar
